@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+--color-brand: #5EFF9C;
+--color-brand-foreground: var(--color-slate-950);
+--color-app-bg: var(--color-slate-50);
+--color-app-text: var(--color-slate-900);
+--color-card-bg: var(--color-white);
+--color-card-border: var(--color-slate-200);
+--color-text-muted: var(--color-slate-500);
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+.dark {
+    --color-app-bg: var(--color-slate-950); /* Fondo casi negro */
+    --color-app-text: var(--color-slate-100);
+    --color-card-bg: var(--color-slate-900); /* Tarjetas gris oscuro */
+    --color-card-border: var(--color-slate-800);
+    --color-text-muted: var(--color-slate-400);
+}
+
+  /* Aplicamos los colores base al cuerpo de la app */
+body {
+    background-color: var(--color-app-bg);
+    color: var(--color-app-text);
+    transition: background-color 0.2s, color 0.2s;
+}
+}
